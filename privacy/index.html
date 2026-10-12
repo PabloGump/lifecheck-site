@@ -89,7 +89,7 @@ td{padding:14px;border-top:1px solid var(--line2);color:var(--mut);vertical-alig
       <a class="brand" href="/"><img src="/assets/icon-256.png" alt="" width="34" height="34" style="border-radius:9px"><span class="wm">Life<b>Check</b></span></a>
       <div class="links"><a class="wide" href="/#how">How it works</a><a href="/#pricing">Pricing</a><a href="/support/">Support</a></div>
     </nav>
-    <div class="intro"><div class="eyebrow">Legal</div><h1>Privacy Policy</h1><p class="lede">What LifeCheck collects, why, who it's shared with, and the choices you have. In plain language where we can.</p><div class="chip"><span class="ms">schedule</span>Effective August 6, 2026</div></div>
+    <div class="intro"><div class="eyebrow">Legal</div><h1>Privacy Policy</h1><p class="lede">What LifeCheck collects, why, who it's shared with, and the choices you have. In plain language where we can.</p><div class="chip"><span class="ms">schedule</span>Effective October 12, 2026</div></div>
   </div>
 </header>
 <main class="wrap doc"><nav class="toc" aria-label="Contents"><h2>Contents</h2><ol><li><a href="#introduction">Introduction</a></li><li><a href="#information-we-collect">Information We Collect</a></li><li><a href="#how-we-use">How We Use Your Information</a></li><li><a href="#healthkit">HealthKit Data</a></li><li><a href="#data-sharing">Data Sharing</a></li><li><a href="#data-retention">Data Retention &amp; Deletion</a></li><li><a href="#your-rights">Your Rights (GDPR / CCPA)</a></li><li><a href="#childrens-privacy">Children's Privacy</a></li><li><a href="#policy-changes">Changes to This Policy</a></li><li><a href="#contact">Contact Us</a></li></ol></nav><article class="body"><section id="introduction">
@@ -150,7 +150,7 @@ td{padding:14px;border-top:1px solid var(--line2);color:var(--mut);vertical-alig
           </tr>
           <tr>
             <td><strong>Social Data</strong></td>
-            <td>Friend connections, challenge participation, in-app messages</td>
+            <td>Friend connections and friend codes; challenges you join; your profile (display name, Life Score, streak and summary stats), which other LifeCheck users can see when it is set to public; activity shared with friends, such as the names of tasks you complete; and reports or blocks you make</td>
             <td><span class="tag tag-cloud"><span class="ms">cloud</span>Cloud</span></td>
             <td>Social features and shared challenges</td>
           </tr>
@@ -168,13 +168,13 @@ td{padding:14px;border-top:1px solid var(--line2);color:var(--mut);vertical-alig
           </tr>
           <tr>
             <td><strong>App Preferences</strong></td>
-            <td>Reminder time, accent colour, notification settings, your display name</td>
+            <td>Reminder time, accent color, notification settings, your display name</td>
             <td><span class="tag tag-cloud"><span class="ms">cloud</span>Cloud</span></td>
             <td>Persisting your choices, and restoring them when you reinstall or sign in on another device</td>
           </tr>
           <tr>
             <td><strong>Device-only Settings</strong></td>
-            <td>Dark mode preference, notification scheduling identifiers, one-off interface flags</td>
+            <td>Dark mode preference, notification scheduling identifiers, one-off interface flags, and what your widgets, Lock Screen, Live Activity and Apple Watch show (your score, streak and today's tasks and habits), kept in storage shared between the app and those features on your devices</td>
             <td><span class="tag tag-device"><span class="ms">devices</span>On-device</span></td>
             <td>Settings that belong to this device rather than your account; never transmitted to any server</td>
           </tr>
@@ -183,6 +183,12 @@ td{padding:14px;border-top:1px solid var(--line2);color:var(--mut);vertical-alig
             <td>App events (screens viewed, features used), a device identifier, crash reports and diagnostic logs</td>
             <td><span class="tag tag-cloud"><span class="ms">cloud</span>Cloud</span></td>
             <td>Understanding which features are used and diagnosing crashes, via Google Firebase Analytics and Sentry</td>
+          </tr>
+          <tr>
+            <td><strong>Website Sign-ups</strong></td>
+            <td>The email address you enter on thelifecheckapp.com to hear when LifeCheck launches</td>
+            <td><span class="tag tag-cloud"><span class="ms">cloud</span>Cloud</span></td>
+            <td>Sending you one email when the app launches. Stored in Firestore, never shared or sold; email us to have it removed</td>
           </tr>
         </tbody>
       </table>
@@ -215,7 +221,7 @@ td{padding:14px;border-top:1px solid var(--line2);color:var(--mut);vertical-alig
       <li>Creating and managing your account with Firebase Authentication.</li>
       <li>Storing and syncing your tasks, habits, goals, notes, and life events across your devices via Firestore.</li>
       <li>Displaying health insights (steps, sleep, etc.) pulled from Apple HealthKit on your device.</li>
-      <li>Enabling social features such as friend lists, challenges, and in-app messaging.</li>
+      <li>Enabling social features such as friend lists, friend codes, shared challenges, the friends activity feed, and reporting or blocking other users.</li>
     </ul>
 
     <h3><span class="ms">notifications</span>Notifications</h3>
@@ -288,7 +294,7 @@ td{padding:14px;border-top:1px solid var(--line2);color:var(--mut);vertical-alig
           <tr>
             <td><strong>Google Firebase</strong></td>
             <td>Authentication, database (Firestore), Cloud Functions, and analytics</td>
-            <td>Email, name, user content, social data, push token, account identifier, device identifier, in-app usage events</td>
+            <td>Email, name, user content, social data, push token, account identifier, device identifier, in-app usage events, website sign-up emails</td>
             <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
           </tr>
           <tr>
