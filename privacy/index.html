@@ -138,9 +138,9 @@ td{padding:14px;border-top:1px solid var(--line2);color:var(--mut);vertical-alig
           </tr>
           <tr>
             <td><strong>Health Data</strong></td>
-            <td>Steps, workouts, sleep and heart rate read from HealthKit. LifeCheck also <strong>writes</strong> workout completions back to HealthKit when you log one.</td>
+            <td>Steps, workouts, sleep, heart rate, active energy (calories) and body weight read from HealthKit. LifeCheck also <strong>writes</strong> workout completions back to HealthKit when you log one.</td>
             <td><span class="tag tag-device"><span class="ms">devices</span>On-device</span></td>
-            <td>Display your health summary within the app and record workouts you complete. Health data is never uploaded to our servers.</td>
+            <td>Display your health summary within the app, offer to mark matching tasks done (such as a step goal or a weigh-in), and record workouts you complete. Health data is never uploaded to our servers.</td>
           </tr>
           <tr>
             <td><strong>Photos</strong></td>
@@ -264,7 +264,7 @@ td{padding:14px;border-top:1px solid var(--line2);color:var(--mut);vertical-alig
 
     <p>Specifically, regarding Apple HealthKit data:</p>
     <ul>
-      <li><strong>What we read.</strong> LifeCheck requests permission to read health data types including step count, workout sessions, sleep analysis, and heart rate.</li>
+      <li><strong>What we read.</strong> LifeCheck requests permission to read health data types including step count, workout sessions, sleep analysis, heart rate, active energy burned, and body weight.</li>
       <li><strong>What we write.</strong> LifeCheck requests permission to write a single data type: workout sessions. When you mark a workout task complete, LifeCheck saves that workout to Apple Health so your activity stays in one place. It writes nothing else, and it never deletes or modifies data written by other apps.</li>
       <li><strong>Stays on your device.</strong> Health data read from HealthKit is processed entirely on-device and is never transmitted to Firebase, Sentry, RevenueCat, Expo, or any other service.</li>
       <li><strong>Never used for advertising.</strong> HealthKit data will not be used for advertising, marketing, or advertising networks of any kind.</li>
