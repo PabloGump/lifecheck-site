@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LifeCheck</title>
+<meta name="robots" content="noindex">
+<meta property="og:title" content="LifeCheck: Score Your Life">
+<meta property="og:description" content="450+ tasks adults forget, already written, and one honest Life Score.">
+<meta property="og:image" content="https://thelifecheckapp.com/assets/link-card-prelaunch.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6763495073">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+/* Any path GitHub Pages doesn't have lands here. App links (/add/<code>,
+   /packs, /programs, ...) open the app directly when it's installed, via
+   the apple-app-site-association file; this page is what everyone else
+   sees: an Open button for the app and a way to get it. */
+:root{--deep:#060F09;--hi:#0E3B21;--ink:#F2F7F4;--mut:rgba(242,247,244,.7);--green:#4ADE80;--line:rgba(74,222,128,.18);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px 20px;background:radial-gradient(80% 60% at 50% 25%,var(--hi),var(--deep));color:var(--ink);font:17px/1.6 'Plus Jakarta Sans',-apple-system,sans-serif;text-align:center}
+.card{max-width:440px}
+img{width:96px;height:96px;border-radius:22px;margin:0 auto 22px;display:block;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+h1{font-weight:800;font-size:32px;line-height:1.12;margin:0 0 10px;letter-spacing:-.02em}
+p{color:var(--mut);margin:0 0 24px}
+.btn{display:block;font:700 17px 'Plus Jakarta Sans',sans-serif;color:#0A2E1A;background:var(--green);border-radius:14px;padding:16px;text-decoration:none;margin-bottom:12px}
+.btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+small{color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="card">
+  <img src="/assets/icon-256.png" alt="LifeCheck">
+  <h1 id="title">Open in LifeCheck</h1>
+  <p id="lead">This link opens in the LifeCheck app.</p>
+  <a class="btn" id="open" href="lifecheck://">Open LifeCheck</a>
+  <a class="btn alt" id="get" href="/">Don't have it yet? Get LifeCheck</a>
+  <small><a href="/" style="color:var(--mut)">thelifecheckapp.com</a></small>
+</div>
+<script>
+// Paths the app handles (src/utils/linking.js). Anything else is a plain 404.
+const APP_PATHS = /^\/(add\/[A-Za-z0-9_-]{1,64}|friends|packs|programs(\/[A-Za-z0-9_-]{1,64})?|upgrade|weekly-review|task\/[A-Za-z0-9_-]{1,64}|tasks|stats|calendar|settings)\/?$/;
+const path = location.pathname;
+if (APP_PATHS.test(path)) {
+  document.getElementById('open').href = 'lifecheck://' + path.replace(/^\//, '').replace(/\/$/, '');
+  if (path.startsWith('/add/')) {
+    document.getElementById('title').textContent = 'You’ve been invited to LifeCheck';
+    document.getElementById('lead').textContent = 'Open the app to add your friend and compare Life Scores.';
+  }
+} else {
+  document.getElementById('title').textContent = 'Page not found';
+  document.getElementById('lead').textContent = 'That page doesn’t exist, but LifeCheck does.';
+  document.getElementById('open').style.display = 'none';
+  document.getElementById('get').textContent = 'Go to thelifecheckapp.com';
+  document.getElementById('get').classList.remove('alt');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["VNKNWSJN4W.app.lifecheck.mobile"],
+        "components": [
+          { "/": "/add/*",          "comment": "friend code (FriendsScreen add/:addCode)" },
+          { "/": "/friends" },
+          { "/": "/packs" },
+          { "/": "/programs" },
+          { "/": "/programs/*" },
+          { "/": "/upgrade" },
+          { "/": "/weekly-review" },
+          { "/": "/task/*" },
+          { "/": "/tasks" },
+          { "/": "/stats" },
+          { "/": "/calendar" },
+          { "/": "/settings" }
+        ]
+      }
+    ]
+  }
+}

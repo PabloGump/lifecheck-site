@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How LifeCheck collects, uses and protects your personal information." />
+  <meta name="theme-color" content="#16A34A" />
+  <title>Privacy Policy | LifeCheck</title>
+
+  <!-- Plus Jakarta Sans (matches the in-app brand wordmark, weight 700 with -3% tracking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+
+  <!-- Material Symbols Rounded — same icon family used in-app via the MS component -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=block" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ───────── Brand tokens — mirror src/constants/theme.js LIGHT mode ───────── */
+    :root {
+      --primary:        #16A34A;   /* primary green, the "Check" wordmark color */
+      --primary-dark:   #0A2E1A;   /* deep dark green, the "Life" wordmark color */
+      --primary-bright: #4ADE80;   /* dark-mode bright green — used for accents */
+      --amber:          #F59E0B;   /* Amber Anchor — sparingly, for highlights */
+      --bg:             #F4F7F5;   /* LIGHT.bg */
+      --surface:        #FFFFFF;
+      --surface-soft:   #EBF0ED;  /* LIGHT.surfaceSecondary */
+      --text:           #0A2E1A;   /* same as primary-dark for high-contrast body */
+      --text-secondary: #4B5563;  /* LIGHT.textSecondary */
+      --text-muted:     #69707E;  /* LIGHT.textMuted */
+      --border:         #D1D9D4;  /* LIGHT.border */
+      --border-soft:    #B8C2BC;  /* LIGHT.borderStrong */
+      --shadow:         0 1px 2px rgba(10, 46, 26, 0.04), 0 6px 24px rgba(10, 46, 26, 0.06);
+      --radius:         16px;
+      --radius-lg:      20px;
+      --radius-pill:    999px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary:        #4ADE80;
+        --primary-dark:   #FFFFFF;
+        --primary-bright: #4ADE80;
+        --bg:             #060F09;
+        --surface:        #0A2E1A;  /* DARK.surface */
+        --surface-soft:   #0D3B20;  /* DARK.surfaceSecondary */
+        --text:           rgba(255,255,255,0.85);  /* DARK.textPrimary */
+        --text-secondary: rgba(255,255,255,0.55);  /* DARK.textSecondary */
+        --text-muted:     rgba(255,255,255,0.55);  /* DARK.textMuted */
+        --border:         rgba(74, 222, 128, 0.14);
+        --border-soft:    rgba(74, 222, 128, 0.08);
+        --shadow:         0 1px 2px rgba(0,0,0,0.5), 0 6px 24px rgba(0,0,0,0.6);
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Material Symbols defaults — match app size/weight */
+    .ms {
+      font-family: 'Material Symbols Rounded';
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 1;
+      vertical-align: middle;
+      user-select: none;
+    }
+    .ms-sm { font-size: 16px; }
+    .ms-lg { font-size: 28px; }
+
+    /* ─────────────── Header ─────────────── */
+    .site-header {
+      background:
+        radial-gradient(ellipse at top, rgba(74,222,128,0.18), transparent 70%),
+        linear-gradient(180deg, #16A34A 0%, #0A2E1A 100%);
+      color: #fff;
+      padding: 64px 24px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .site-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% -10%, rgba(245, 158, 11, 0.12), transparent 50%);
+      pointer-events: none;
+    }
+
+    .header-inner { position: relative; z-index: 1; }
+
+    /* The logo lockup — Amber Anchor icon + LifeCheck wordmark.
+       The icon SVG is embedded inline (see <svg.app-icon> below); it's
+       the master 1024-canvas spec rendered at whatever size the
+       container sets via width/height. Drop shadow comes from the
+       parent .logo-icon-wrap so the SVG itself stays crisp. */
+    .logo-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .logo-icon-wrap {
+      width: 56px; height: 56px;
+      flex-shrink: 0;
+      /* Use box-shadow on a sibling glow layer instead of filter:
+         drop-shadow on the wrapper. drop-shadow rasterizes the
+         element to sample for the blur, which on some browsers
+         causes the icon itself to lose sharpness. The glow now
+         sits behind the image as a separate ::before pseudo-
+         element so the actual <img> is never re-rasterized. */
+      position: relative;
+      isolation: isolate;
+    }
+    .logo-icon-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 14px;
+      background: transparent;
+      box-shadow:
+        0 6px 20px rgba(245, 158, 11, 0.28),
+        0 4px 14px rgba(22, 163, 74, 0.32);
+      z-index: -1;
+    }
+    /* The footer mark doesn't need the glow at 32px — looks heavier
+       than the wordmark next to it. Override here. */
+    footer .footer-mark .logo-icon-wrap::before { display: none; }
+    /* Using a rasterized 2048×2048 PNG (downloaded from icon@4x.png)
+       displayed at 56px gives bulletproof crispness on retina + sub-pixel
+       displays. NO image-rendering hint — the default ("auto") uses
+       browser-native bilinear/bicubic downscaling which is correct
+       for smooth gradient content. `crisp-edges` was here briefly but
+       forces nearest-neighbor scaling (designed for pixel art) which
+       makes the squircle edges and gradient look chunky.
+       The PNG is rendered once via resvg-js (Mozilla's libresvg) at
+       full master resolution and never re-rasterized client-side. */
+    .logo-icon-wrap .app-icon {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* The wordmark — matches src/components/Wordmark.js. Two-tone, Plus Jakarta 700,
+       letter-spacing -3% of font size (28px × -0.03 = -0.84px). On the dark hero
+       header we invert: "Life" white, "Check" bright-green. */
+    .wordmark {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: -0.84px;
+      line-height: 1;
+    }
+    .wordmark-life  { color: #FFFFFF; }
+    .wordmark-check { color: #4ADE80; }
+
+    .site-header h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: clamp(32px, 5vw, 44px);
+      letter-spacing: -1.2px;
+      margin-bottom: 12px;
+    }
+    .site-header .lede {
+      font-size: 16px;
+      color: #FFFFFF;
+      opacity: 0.95;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-weight: 500;
+      text-shadow: 0 1px 2px rgba(10, 46, 26, 0.3);
+    }
+    .effective-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 22px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: var(--radius-pill);
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+    .effective-badge .ms { font-size: 14px; opacity: 0.9; }
+
+    /* ─────────────── Layout ─────────────── */
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ─────────────── Table of Contents ─────────────── */
+    .toc-wrapper {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      margin: 48px 0;
+      box-shadow: var(--shadow);
+    }
+    .toc-wrapper h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .toc-list {
+      list-style: none;
+      counter-reset: toc;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 4px 24px;
+    }
+    .toc-list li { counter-increment: toc; }
+    .toc-list a {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--primary);
+      font-size: 14.5px;
+      font-weight: 600;
+      padding: 6px 0;
+      transition: color 0.15s, transform 0.15s;
+    }
+    .toc-list a:hover { color: var(--primary-dark); transform: translateX(2px); }
+    .toc-list a::before {
+      content: counter(toc);
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface-soft);
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 6px;
+    }
+
+    /* ─────────────── Sections ─────────────── */
+    main { padding: 0 0 96px; }
+
+    section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    section:last-of-type { border-bottom: none; }
+
+    section h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, #16A34A 0%, #0A7A30 100%);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      border-radius: 10px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(22, 163, 74, 0.3);
+    }
+
+    section h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 28px 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    section h3 .ms { color: var(--primary); font-size: 18px; }
+
+    p { margin-bottom: 14px; color: var(--text-secondary); }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      padding-left: 22px;
+      margin-bottom: 14px;
+      color: var(--text-secondary);
+    }
+    li { margin-bottom: 8px; }
+
+    strong { font-weight: 700; color: var(--text); }
+    em     { font-style: italic; color: var(--text-secondary); }
+
+    a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+
+    /* ─────────────── Callouts ─────────────── */
+    .callout {
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin: 22px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      border-width: 1px;
+      border-style: solid;
+    }
+    .callout-icon {
+      width: 36px; height: 36px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .callout-icon .ms { font-size: 22px; }
+    .callout-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .callout p {
+      margin-bottom: 0;
+      font-size: 14.5px;
+      line-height: 1.65;
+    }
+
+    .callout-info {
+      background: var(--surface-soft);
+      border-color: rgba(22, 163, 74, 0.18);
+    }
+    .callout-info .callout-icon { background: rgba(22, 163, 74, 0.12); }
+    .callout-info .callout-icon .ms { color: var(--primary); }
+    .callout-info .callout-title { color: var(--primary-dark); }
+
+    .callout-success {
+      background: rgba(74, 222, 128, 0.10);
+      border-color: rgba(22, 163, 74, 0.22);
+    }
+    .callout-success .callout-icon { background: rgba(22, 163, 74, 0.14); }
+    .callout-success .callout-icon .ms { color: var(--primary); }
+    .callout-success .callout-title { color: var(--primary-dark); }
+
+    .callout-amber {
+      background: rgba(245, 158, 11, 0.08);
+      border-color: rgba(245, 158, 11, 0.24);
+    }
+    .callout-amber .callout-icon { background: rgba(245, 158, 11, 0.14); }
+    .callout-amber .callout-icon .ms { color: #B45309; }
+    .callout-amber .callout-title { color: #92400E; }
+
+    .callout-shield {
+      background: linear-gradient(135deg, rgba(22,163,74,0.08), rgba(74,222,128,0.05));
+      border-color: rgba(22, 163, 74, 0.28);
+    }
+    .callout-shield .callout-icon {
+      background: linear-gradient(135deg, #16A34A, #0A7A30);
+    }
+    .callout-shield .callout-icon .ms { color: #fff; }
+    .callout-shield .callout-title { color: var(--primary-dark); }
+
+    @media (prefers-color-scheme: dark) {
+      .callout-amber .callout-title { color: #FCD34D; }
+      .callout-amber .callout-icon .ms { color: #F59E0B; }
+    }
+
+    /* ─────────────── Data table ─────────────── */
+    .data-table-wrapper {
+      overflow-x: auto;
+      margin: 24px 0;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      min-width: 640px;
+    }
+    thead th {
+      background: var(--surface-soft);
+      padding: 14px 18px;
+      text-align: left;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+    tbody td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-soft);
+      vertical-align: top;
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: var(--surface-soft); }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+    }
+    .tag .ms { font-size: 13px; }
+    .tag.tag-cloud {
+      background: rgba(22, 163, 74, 0.12);
+      color: var(--primary);
+    }
+    .tag.tag-device {
+      background: rgba(74, 222, 128, 0.16);
+      color: #047857;
+    }
+    .tag.tag-conditional {
+      background: rgba(245, 158, 11, 0.14);
+      color: #B45309;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .tag.tag-device { color: #4ADE80; }
+      .tag.tag-conditional { color: #FCD34D; }
+    }
+
+    /* ─────────────── Rights grid ─────────────── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px;
+      margin: 24px 0;
+    }
+    .right-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+    }
+    .right-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(22, 163, 74, 0.22);
+      box-shadow: var(--shadow);
+    }
+    .right-card .right-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: var(--surface-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+    .right-card .right-icon .ms { color: var(--primary); font-size: 20px; }
+    .right-card h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .right-card p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-bottom: 0;
+      line-height: 1.55;
+    }
+
+    /* ─────────────── Contact card ─────────────── */
+    .contact-card {
+      background: linear-gradient(135deg, #16A34A 0%, #0A2E1A 100%);
+      color: #fff;
+      border-radius: 20px;
+      padding: 36px 32px;
+      text-align: center;
+      margin-top: 24px;
+      box-shadow: 0 12px 40px rgba(22, 163, 74, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 100% 0%, rgba(245, 158, 11, 0.18), transparent 50%);
+      pointer-events: none;
+    }
+    .contact-card-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+    /* The contact card uses a static green gradient in BOTH themes,
+       so all text inside it must stay white regardless of the
+       prefers-color-scheme inversion of the global tokens. */
+    .contact-card h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.4px;
+      color: #FFFFFF;
+    }
+    .contact-card p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.82);
+      max-width: 460px;
+      margin: 0 auto 24px;
+    }
+    /* Contact card lives on a green gradient (in BOTH light and dark
+       modes — same .contact-card background). The button is always
+       white-on-green-card, so text + icon must always use the static
+       deep-green, NOT the theme token. The earlier --primary-dark
+       inversion in dark mode flipped them to white → invisible. */
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      color: #0A2E1A;
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    }
+    .contact-email:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,0.24); text-decoration: none; color: #0A2E1A; }
+    .contact-email .ms { color: #16A34A; font-size: 18px; }
+    .contact-meta {
+      margin-top: 18px;
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.2px;
+    }
+    .contact-meta strong { color: rgba(255,255,255,0.78); font-weight: 600; }
+
+    /* ─────────────── Footer ─────────────── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    footer .footer-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    footer .footer-mark .logo-icon-wrap { width: 32px; height: 32px; filter: none; }
+    footer .footer-mark .wordmark { font-size: 16px; letter-spacing: -0.48px; }
+    footer .footer-mark .wordmark-life { color: var(--primary-dark); }
+    footer .footer-mark .wordmark-check { color: var(--primary); }
+    footer a { color: var(--primary); }
+
+    /* ─────────────── Responsive ─────────────── */
+    @media (max-width: 600px) {
+      .toc-wrapper { padding: 24px; }
+      .toc-list { grid-template-columns: 1fr; }
+      section h2 { font-size: 20px; }
+      section h2 .section-num { width: 28px; height: 28px; font-size: 12px; }
+      .rights-grid { grid-template-columns: 1fr 1fr; }
+      .contact-card { padding: 32px 24px; }
+      .contact-card h3 { font-size: 19px; }
+    }
+    @media (max-width: 400px) {
+      .rights-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-lockup">
+      <div class="logo-icon-wrap" aria-hidden="true">
+        <!-- Amber Anchor app icon. Rendered from the master SVG via
+             resvg-js (Mozilla libresvg) at 2048px and downscaled by the
+             browser to 56px — eliminates SVG-gradient aliasing seen
+             on some browsers / displays. -->
+        <img class="app-icon"
+             src="/assets/icon@4x.png"
+             srcset="icon.png 1x, icon@4x.png 2x"
+             width="56" height="56"
+             alt="LifeCheck app icon" />
+      </div>
+      <span class="wordmark" aria-label="LifeCheck">
+        <span class="wordmark-life">Life</span><span class="wordmark-check">Check</span>
+      </span>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="lede">We're committed to protecting your personal information and being transparent about how we use it.</p>
+    <div class="effective-badge">
+      <span class="ms">schedule</span>
+      Effective Date: August 6, 2026
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════ MAIN ═══════════════════════════ -->
+<main>
+<div class="container">
+
+  <!-- Table of Contents -->
+  <nav class="toc-wrapper" aria-label="Table of Contents">
+    <h2>Contents</h2>
+    <ol class="toc-list">
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#information-we-collect">Information We Collect</a></li>
+      <li><a href="#how-we-use">How We Use Your Information</a></li>
+      <li><a href="#healthkit">HealthKit Data</a></li>
+      <li><a href="#data-sharing">Data Sharing</a></li>
+      <li><a href="#data-retention">Data Retention &amp; Deletion</a></li>
+      <li><a href="#your-rights">Your Rights (GDPR / CCPA)</a></li>
+      <li><a href="#childrens-privacy">Children's Privacy</a></li>
+      <li><a href="#policy-changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <!-- ── 1. Introduction ── -->
+  <section id="introduction">
+    <h2><span class="section-num">1</span> Introduction</h2>
+    <p>
+      Welcome to <strong>LifeCheck</strong>, a health and productivity app for iPhone and iPad available on the Apple App Store. LifeCheck is built and operated by an independent developer.
+    </p>
+    <p>
+      This Privacy Policy explains what personal information we collect when you use LifeCheck, how we use it, with whom we share it, and the rights you have regarding your data. By downloading or using LifeCheck, you agree to the practices described in this policy.
+    </p>
+    <div class="callout callout-info">
+      <div class="callout-icon"><span class="ms">privacy_tip</span></div>
+      <div>
+        <div class="callout-title">Plain-language summary</div>
+        <p>We collect only what we need to make the app work. We do not sell your personal data. Health data from Apple HealthKit is never shared with third parties and is never used for advertising. You can delete your account and all associated data at any time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 2. Information We Collect ── -->
+  <section id="information-we-collect">
+    <h2><span class="section-num">2</span> Information We Collect</h2>
+    <p>We collect several categories of information, each for specific purposes described below.</p>
+
+    <div class="data-table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Data Collected</th>
+            <th>Storage</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Account Data</strong></td>
+            <td>Email and hashed password (email/password sign-in); or, when using Sign in with Apple / Google, an authentication identifier plus the name and email returned by the provider you choose</td>
+            <td><span class="tag tag-cloud"><span class="ms">cloud</span>Cloud</span></td>
+            <td>Authentication and account management via Firebase Authentication</td>
+          </tr>
+          <tr>
+            <td><strong>User Content</strong></td>
+            <td>Tasks, habits, goals, notes, life events you create</td>
+            <td><span class="tag tag-cloud"><span class="ms">cloud</span>Cloud</span></td>
+            <td>Core app functionality; stored in Firestore under your account</td>
+          </tr>
+          <tr>
+            <td><strong>Health Data</strong></td>
+            <td>Steps, workouts, sleep and heart rate read from HealthKit. LifeCheck also <strong>writes</strong> workout completions back to HealthKit when you log one.</td>
+            <td><span class="tag tag-device"><span class="ms">devices</span>On-device</span></td>
+            <td>Display your health summary within the app and record workouts you complete. Health data is never uploaded to our servers.</td>
+          </tr>
+          <tr>
+            <td><strong>Photos</strong></td>
+            <td>Photos you choose to attach to a task, taken with the camera or selected from your photo library</td>
+            <td><span class="tag tag-device"><span class="ms">devices</span>On-device</span></td>
+            <td>Showing the photo on the task you attached it to. The image file stays on your device; only its local file path is stored alongside the task.</td>
+          </tr>
+          <tr>
+            <td><strong>Social Data</strong></td>
+            <td>Friend connections, challenge participation, in-app messages</td>
+            <td><span class="tag tag-cloud"><span class="ms">cloud</span>Cloud</span></td>
+            <td>Social features and shared challenges</td>
+          </tr>
+          <tr>
+            <td><strong>Push Notification Token</strong></td>
+            <td>Device push token issued by APNs / Expo</td>
+            <td><span class="tag tag-cloud"><span class="ms">cloud</span>Cloud</span></td>
+            <td>Delivering notifications you have opted into</td>
+          </tr>
+          <tr>
+            <td><strong>Subscription Status</strong></td>
+            <td>Active/inactive subscriber flag, purchase entitlements</td>
+            <td><span class="tag tag-cloud"><span class="ms">cloud</span>Cloud</span></td>
+            <td>Unlocking premium features via RevenueCat</td>
+          </tr>
+          <tr>
+            <td><strong>App Preferences</strong></td>
+            <td>Reminder time, accent colour, notification settings, your display name</td>
+            <td><span class="tag tag-cloud"><span class="ms">cloud</span>Cloud</span></td>
+            <td>Persisting your choices, and restoring them when you reinstall or sign in on another device</td>
+          </tr>
+          <tr>
+            <td><strong>Device-only Settings</strong></td>
+            <td>Dark mode preference, notification scheduling identifiers, one-off interface flags</td>
+            <td><span class="tag tag-device"><span class="ms">devices</span>On-device</span></td>
+            <td>Settings that belong to this device rather than your account; never transmitted to any server</td>
+          </tr>
+          <tr>
+            <td><strong>Usage &amp; Crash Data</strong></td>
+            <td>App events (screens viewed, features used), a device identifier, crash reports and diagnostic logs</td>
+            <td><span class="tag tag-cloud"><span class="ms">cloud</span>Cloud</span></td>
+            <td>Understanding which features are used and diagnosing crashes, via Google Firebase Analytics and Sentry</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-amber">
+      <div class="callout-icon"><span class="ms">analytics</span></div>
+      <div>
+        <div class="callout-title">Usage &amp; crash data note</div>
+        <p>Google Firebase Analytics and Sentry crash reporting <strong>are active</strong> in the current version of LifeCheck. Firebase Analytics records in-app events (such as which screens you open and which features you use) together with your account identifier and a device identifier. Sentry receives crash reports and the diagnostic context needed to debug them. Neither is used for advertising, and neither tracks you across other companies' apps or websites.</p>
+      </div>
+    </div>
+
+    <h3><span class="ms">block</span>Information we do <em>not</em> collect</h3>
+    <ul>
+      <li>We do not collect your precise GPS location.</li>
+      <li>We do not access your microphone.</li>
+      <li>We do not upload your photos. LifeCheck asks for camera and photo library access only when you choose to attach a photo to a task or save a score card, and the images stay on your device.</li>
+      <li>We do not collect payment card or bank details (all purchases are handled entirely by Apple's App Store and RevenueCat).</li>
+      <li>We do not build advertising profiles, and we do not track you across other companies' apps or websites.</li>
+    </ul>
+  </section>
+
+  <!-- ── 3. How We Use Your Information ── -->
+  <section id="how-we-use">
+    <h2><span class="section-num">3</span> How We Use Your Information</h2>
+    <p>We use the information we collect solely to provide, maintain, and improve LifeCheck. Specifically:</p>
+
+    <h3><span class="ms">apps</span>Core app functionality</h3>
+    <ul>
+      <li>Creating and managing your account with Firebase Authentication.</li>
+      <li>Storing and syncing your tasks, habits, goals, notes, and life events across your devices via Firestore.</li>
+      <li>Displaying health insights (steps, sleep, etc.) pulled from Apple HealthKit on your device.</li>
+      <li>Enabling social features such as friend lists, challenges, and in-app messaging.</li>
+    </ul>
+
+    <h3><span class="ms">notifications</span>Notifications</h3>
+    <ul>
+      <li>Sending habit reminders, goal nudges, and social notifications you have opted into.</li>
+      <li>Your device push token is used only to route notifications to your device and is not used for any other purpose.</li>
+    </ul>
+
+    <h3><span class="ms">verified</span>Subscriptions</h3>
+    <ul>
+      <li>Verifying your subscription status through RevenueCat to unlock premium features.</li>
+      <li>We receive only your subscription entitlement status. We do not receive your payment card or billing details.</li>
+    </ul>
+
+    <h3><span class="ms">trending_up</span>App improvement (if analytics are enabled)</h3>
+    <ul>
+      <li>Understanding which features are used most frequently to prioritize improvements.</li>
+      <li>Diagnosing crashes and performance issues to improve stability.</li>
+    </ul>
+
+    <div class="callout callout-success">
+      <div class="callout-icon"><span class="ms">check_circle</span></div>
+      <div>
+        <div class="callout-title">We do not use your data for</div>
+        <p>Advertising, selling to data brokers, profiling for marketing purposes, training machine learning models, or any purpose unrelated to providing LifeCheck functionality to you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. HealthKit Data ── -->
+  <section id="healthkit">
+    <h2><span class="section-num">4</span> HealthKit Data</h2>
+
+    <div class="callout callout-shield">
+      <div class="callout-icon"><span class="ms">favorite</span></div>
+      <div>
+        <div class="callout-title">Apple HealthKit: strict data protections apply</div>
+        <p>LifeCheck reads health data from Apple HealthKit to display your personal health summary within the app, and writes workout completions back to HealthKit when you log one. <strong>HealthKit data is never shared with any third party, is never uploaded to any server, and is never used for advertising, marketing, or any purpose unrelated to providing health features directly to you.</strong></p>
+      </div>
+    </div>
+
+    <p>Specifically, regarding Apple HealthKit data:</p>
+    <ul>
+      <li><strong>What we read.</strong> LifeCheck requests permission to read health data types including step count, workout sessions, sleep analysis, and heart rate.</li>
+      <li><strong>What we write.</strong> LifeCheck requests permission to write a single data type: workout sessions. When you mark a workout task complete, LifeCheck saves that workout to Apple Health so your activity stays in one place. It writes nothing else, and it never deletes or modifies data written by other apps.</li>
+      <li><strong>Stays on your device.</strong> Health data read from HealthKit is processed entirely on-device and is never transmitted to Firebase, Sentry, RevenueCat, Expo, or any other service.</li>
+      <li><strong>Never used for advertising.</strong> HealthKit data will not be used for advertising, marketing, or advertising networks of any kind.</li>
+      <li><strong>Never sold.</strong> HealthKit data is never sold or disclosed for any commercial purpose.</li>
+      <li><strong>Permission is optional.</strong> You may deny or revoke HealthKit access at any time via iOS Settings → Privacy &amp; Security → Health → LifeCheck. Core app features (tasks, habits, goals) remain fully functional without health access.</li>
+      <li><strong>Compliance with Apple guidelines.</strong> Our use of HealthKit data complies with Apple's HealthKit framework requirements and the App Store Review Guidelines.</li>
+    </ul>
+  </section>
+
+  <!-- ── 5. Data Sharing ── -->
+  <section id="data-sharing">
+    <h2><span class="section-num">5</span> Data Sharing</h2>
+    <p>
+      We do not sell, rent, or trade your personal information. We share data only with the service providers listed below, and only to the extent necessary for them to perform services on our behalf.
+    </p>
+
+    <div class="data-table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Service Provider</th>
+            <th>Purpose</th>
+            <th>Data Shared</th>
+            <th>Privacy Policy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Google Firebase</strong></td>
+            <td>Authentication, database (Firestore), Cloud Functions, and analytics</td>
+            <td>Email, name, user content, social data, push token, account identifier, device identifier, in-app usage events</td>
+            <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
+          </tr>
+          <tr>
+            <td><strong>Sentry</strong></td>
+            <td>Crash reporting and error diagnostics</td>
+            <td>Crash reports, stack traces, device and OS version, and your account identifier</td>
+            <td><a href="https://sentry.io/privacy/" target="_blank" rel="noopener">sentry.io/privacy</a></td>
+          </tr>
+          <tr>
+            <td><strong>RevenueCat</strong></td>
+            <td>Subscription management and purchase validation</td>
+            <td>Subscription status, App Store receipt data</td>
+            <td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td><strong>Expo / Expo Notifications</strong></td>
+            <td>Push notification delivery infrastructure</td>
+            <td>Device push token</td>
+            <td><a href="https://expo.dev/privacy" target="_blank" rel="noopener">expo.dev/privacy</a></td>
+          </tr>
+          <tr>
+            <td><strong>Apple HealthKit</strong></td>
+            <td>Reading health data from, and writing workout completions to, the device</td>
+            <td>No data is shared with Apple beyond what HealthKit normally manages on your device</td>
+            <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a></td>
+          </tr>
+          <tr>
+            <td><strong>Sign in with Apple</strong></td>
+            <td>Optional sign-in via Apple ID</td>
+            <td>An Apple-issued anonymized identifier and, optionally, the email address and name you choose to share. Apple may relay email through a private relay address.</td>
+            <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a></td>
+          </tr>
+          <tr>
+            <td><strong>Google Sign-In</strong></td>
+            <td>Optional sign-in via Google account</td>
+            <td>Email address, display name, and Google profile photo URL. Used solely to create or authenticate your LifeCheck account.</td>
+            <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3><span class="ms">gavel</span>Other disclosure circumstances</h3>
+    <p>We may disclose your information in the following limited circumstances:</p>
+    <ul>
+      <li><strong>Legal compliance.</strong> If required by applicable law, regulation, court order, or legal process, we may disclose information as necessary.</li>
+      <li><strong>Safety.</strong> If we believe in good faith that disclosure is necessary to protect the rights, property, or safety of LifeCheck, our users, or the public.</li>
+      <li><strong>Business transfer.</strong> If LifeCheck is acquired by or merged with another entity, your data may be transferred as part of that transaction. We will notify you beforehand via in-app notice or email.</li>
+    </ul>
+
+    <div class="callout callout-success">
+      <div class="callout-icon"><span class="ms">block</span></div>
+      <div>
+        <div class="callout-title">We do not sell personal data</div>
+        <p>We do not sell, rent, or monetize your personal information to any third party for their own commercial purposes. This applies to all users, including California residents covered by the CCPA.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. Data Retention & Deletion ── -->
+  <section id="data-retention">
+    <h2><span class="section-num">6</span> Data Retention &amp; Deletion</h2>
+
+    <h3><span class="ms">history</span>How long we retain your data</h3>
+    <p>
+      We retain your account data and user-generated content for as long as your account is active. Push notification tokens are refreshed and may be updated by iOS periodically. Usage and crash data (if collected) is retained according to Firebase's default retention periods, typically 14 months.
+    </p>
+    <p>
+      Most of what LifeCheck stores (your tasks, habits, streaks, completion history, preferences, your name and optional age range, and anything you type yourself such as Life Audit answers, life-event entries and task notes) is written to your device first. If you are signed in and cloud backup is enabled, a copy of that data is also uploaded to your private area of our database so it can be restored when you reinstall the app or sign in on another device. Nobody else can read it.</p>
+    <p>
+      That backup is deleted along with everything else when you delete your account. Data that stays on the device only, such as notification scheduling identifiers and one-off interface flags, is removed when you delete the app or clear its data in iOS Settings.</p>
+    <p>
+      Health data is the exception: information read from Apple Health is never included in the backup and never leaves your device.
+    </p>
+
+    <h3><span class="ms">delete_forever</span>Deleting your account &amp; data</h3>
+    <p>You have the right to delete your account and all associated data. You can request this by:</p>
+    <ul>
+      <li><strong>In-app deletion</strong> (if available): Navigate to Settings → Account → Delete Account within LifeCheck.</li>
+      <li><strong>Email request:</strong> Send an account deletion request via the contact channel listed in the <a href="#contact">Contact Us</a> section, from the email address associated with your account.</li>
+    </ul>
+    <p>
+      Upon receiving a verified deletion request, we will delete your account, email address, all user-generated content (tasks, habits, goals, notes, life events), social connections, messages, and push notification token from our systems within <strong>30 days</strong>, except where retention is required by law or for legitimate business purposes (such as preventing fraud).
+    </p>
+    <p>
+      Please note: deleting your account within the app does not cancel an active subscription. To manage or cancel your subscription, go to iPhone Settings → Your Name → Subscriptions.
+    </p>
+  </section>
+
+  <!-- ── 7. Your Rights ── -->
+  <section id="your-rights">
+    <h2><span class="section-num">7</span> Your Rights (GDPR / CCPA)</h2>
+    <p>
+      Depending on where you live, you may have specific rights regarding your personal data. We are committed to honoring these rights regardless of your location.
+    </p>
+
+    <div class="rights-grid">
+      <div class="right-card">
+        <div class="right-icon"><span class="ms">search</span></div>
+        <h4>Right to access</h4>
+        <p>Request a copy of the personal data we hold about you.</p>
+      </div>
+      <div class="right-card">
+        <div class="right-icon"><span class="ms">edit</span></div>
+        <h4>Right to rectification</h4>
+        <p>Request that we correct inaccurate or incomplete data.</p>
+      </div>
+      <div class="right-card">
+        <div class="right-icon"><span class="ms">delete</span></div>
+        <h4>Right to erasure</h4>
+        <p>Request deletion of your personal data ("right to be forgotten").</p>
+      </div>
+      <div class="right-card">
+        <div class="right-icon"><span class="ms">block</span></div>
+        <h4>Right to object</h4>
+        <p>Object to certain processing of your personal data.</p>
+      </div>
+      <div class="right-card">
+        <div class="right-icon"><span class="ms">download</span></div>
+        <h4>Right to portability</h4>
+        <p>Receive your data in a structured, machine-readable format.</p>
+      </div>
+      <div class="right-card">
+        <div class="right-icon"><span class="ms">pause_circle</span></div>
+        <h4>Right to restriction</h4>
+        <p>Request that we restrict how we process your data in certain circumstances.</p>
+      </div>
+    </div>
+
+    <h3><span class="ms">public</span>GDPR (European Economic Area, UK, Switzerland)</h3>
+    <p>
+      If you are located in the EEA, UK, or Switzerland, you have rights under the General Data Protection Regulation (GDPR) or equivalent legislation. Our legal basis for processing your personal data is:
+    </p>
+    <ul>
+      <li><strong>Contract performance:</strong> processing necessary to provide the LifeCheck service you have signed up for (account data, user content, social features, push notifications, subscriptions).</li>
+      <li><strong>Legitimate interests:</strong> app stability and improvement (crash and usage analytics), fraud prevention, and ensuring security.</li>
+      <li><strong>Consent:</strong> HealthKit access and push notifications, which you grant explicitly via iOS permission prompts.</li>
+    </ul>
+    <p>
+      You may exercise your GDPR rights via the contact channel in the <a href="#contact">Contact Us</a> section. We will respond within 30 days. You also have the right to lodge a complaint with your local data protection authority.
+    </p>
+
+    <h3><span class="ms">flag</span>CCPA (California residents)</h3>
+    <p>
+      If you are a California resident, the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act (CPRA) grant you additional rights, including:
+    </p>
+    <ul>
+      <li>The right to know what personal information we collect, use, disclose, and sell.</li>
+      <li>The right to delete personal information we hold about you.</li>
+      <li>The right to opt out of the sale or sharing of personal information. <strong>We do not sell or share personal information</strong>, so no opt-out is needed.</li>
+      <li>The right to non-discrimination for exercising your CCPA rights.</li>
+    </ul>
+    <p>
+      To exercise any of these rights, reach out via the contact channel in the <a href="#contact">Contact Us</a> section. We will verify your identity before fulfilling a request and respond within 45 days as required by California law.
+    </p>
+
+    <h3><span class="ms">how_to_reg</span>How to exercise your rights</h3>
+    <p>
+      To submit any privacy rights request (access, correction, deletion, portability or objection), please reach out via the contact channel in the <a href="#contact">Contact Us</a> section with the subject line <strong>"Privacy Request"</strong> and include the email address associated with your LifeCheck account. We will respond within 30 days (or 45 days for CCPA requests).
+    </p>
+  </section>
+
+  <!-- ── 8. Children's Privacy ── -->
+  <section id="childrens-privacy">
+    <h2><span class="section-num">8</span> Children's Privacy</h2>
+    <p>
+      LifeCheck is not directed to children under the age of 13, and we do not knowingly collect personal information from anyone under 13. If you are a parent or guardian and believe a child under 13 has provided personal information through LifeCheck, please contact us via the channel in the <a href="#contact">Contact Us</a> section and we will delete that information promptly.
+    </p>
+    <p>
+      If you are in the European Economic Area or the United Kingdom, the age of digital consent is set by your country and may be higher than 13. You should not use LifeCheck if you are under that age in your jurisdiction. We do not operate a parental-consent process, so we cannot rely on parental consent as a basis for processing.
+    </p>
+  </section>
+
+  <!-- ── 9. Changes to This Policy ── -->
+  <section id="policy-changes">
+    <h2><span class="section-num">9</span> Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time to reflect changes in our practices, the app's features, or legal requirements. When we make material changes, we will notify you by:
+    </p>
+    <ul>
+      <li>Updating the "Effective Date" at the top of this page, and/or</li>
+      <li>Sending an in-app notification or email to the address associated with your account.</li>
+    </ul>
+    <p>
+      We encourage you to review this policy periodically. Your continued use of LifeCheck after any changes take effect constitutes your acceptance of the revised policy.
+    </p>
+    <p>
+      The most current version of this Privacy Policy is always available at the URL linked from the LifeCheck App Store listing.
+    </p>
+  </section>
+
+  <!-- ── 10. Contact ── -->
+  <section id="contact">
+    <h2><span class="section-num">10</span> Contact Us</h2>
+    <p>
+      If you have any questions, concerns, or requests related to this Privacy Policy or your personal data, please reach out. We are an independent developer and will do our best to respond promptly.
+    </p>
+    <div class="contact-card">
+      <div class="contact-card-inner">
+        <h3>Get in touch</h3>
+        <p>Questions about your privacy or data? Email us and we'll respond as soon as we can. You can also manage account deletion and data requests directly in the app under <strong>Settings → Account</strong>.</p>
+        <p style="margin-top:18px;">
+          <a href="mailto:thelifecheckapp@gmail.com?subject=Privacy%20Request" style="display:inline-block;background:#fff;color:#0A2E1A;font-weight:700;padding:12px 22px;border-radius:12px;text-decoration:none;">thelifecheckapp@gmail.com</a>
+        </p>
+        <p class="contact-meta" style="margin-top:14px;">
+          <strong>For privacy requests, use the subject line:</strong> "Privacy Request"
+        </p>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /container -->
+</main>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer>
+  <div class="footer-mark">
+    <div class="logo-icon-wrap" aria-hidden="true">
+      <img class="app-icon"
+           src="/assets/icon-256.png"
+           srcset="icon.png 1x, icon@4x.png 2x"
+           width="32" height="32"
+           alt="" />
+    </div>
+    <span class="wordmark" aria-label="LifeCheck">
+      <span class="wordmark-life">Life</span><span class="wordmark-check">Check</span>
+    </span>
+  </div>
+  <p>
+    &copy; 2026 LifeCheck. All rights reserved.
+    &nbsp;·&nbsp;
+    Effective May 1, 2026
+  </p>
+</footer>
+
+</body>
+</html>
