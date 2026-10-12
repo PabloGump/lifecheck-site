@@ -1,673 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="How LifeCheck collects, uses and protects your personal information." />
-  <meta name="theme-color" content="#16A34A" />
-  <title>Privacy Policy | LifeCheck</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy Policy | LifeCheck</title>
+<meta name="description" content="How LifeCheck handles your data: what we collect, why, and your choices.">
+<link rel="canonical" href="https://thelifecheckapp.com/privacy/">
+<meta property="og:title" content="Privacy Policy | LifeCheck"><meta property="og:description" content="How LifeCheck handles your data: what we collect, why, and your choices.">
+<meta property="og:image" content="https://thelifecheckapp.com/assets/link-card-prelaunch.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#060F09">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=block" rel="stylesheet">
+<style>
+:root{--deep:#060F09;--ground:#0A2E1A;--hi:#0E3B21;--card:#0C2215;--line:rgba(74,222,128,.16);--line2:rgba(242,247,244,.08);
+  --ink:#F2F7F4;--mut:rgba(242,247,244,.72);--faint:rgba(242,247,244,.48);--green:#4ADE80;--green2:#1BA659;--amber:#F59E0B;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--deep);color:var(--ink);font:18px/1.65 'Plus Jakarta Sans',-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--green);text-decoration:none} a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:20px}
+.wm{font-weight:700;letter-spacing:-.03em;white-space:nowrap} .wm b{color:var(--green);font-weight:700}
+.ms{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;font-size:1.15em;line-height:1;display:inline-block;vertical-align:-.2em;-webkit-font-feature-settings:'liga';font-feature-settings:'liga'}
+nav.top{display:flex;align-items:center;justify-content:space-between;padding-block:20px}
+nav.top .brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-size:24px} nav.top .brand:hover{text-decoration:none}
+nav.top .links{display:flex;gap:26px;font-size:16px} nav.top .links a{color:var(--mut)} nav.top .links a[aria-current]{color:var(--ink)}
+.page-head{background:radial-gradient(90% 120% at 70% 0%,var(--hi) 0%,var(--ground) 40%,var(--deep) 100%);border-bottom:1px solid var(--line2)}
+.page-head .intro{padding-block:36px 56px;max-width:760px}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+h1{font-weight:800;font-size:clamp(40px,5vw,64px);line-height:1.04;letter-spacing:-.03em;margin:10px 0 14px}
+.lede{color:var(--mut);font-size:clamp(18px,1.6vw,21px);margin:0}
+.chip{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-size:14px;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+footer{border-top:1px solid var(--line2);padding-block:32px;color:var(--faint);font-size:14px;margin-top:40px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px} footer a{color:var(--mut)}
+.btn{font:700 17px/1 'Plus Jakarta Sans',sans-serif;color:#0A2E1A;background:var(--green);border:0;border-radius:14px;padding:16px 22px;cursor:pointer;display:inline-flex;align-items:center;gap:10px}
+.btn:hover{text-decoration:none;filter:brightness(1.05)} .btn:focus-visible,a:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
 
-  <!-- Plus Jakarta Sans (matches the in-app brand wordmark, weight 700 with -3% tracking) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+.doc{display:grid;grid-template-columns:240px minmax(0,1fr);gap:64px;padding-block:56px 24px}
+.toc{position:sticky;top:24px;align-self:start;font-size:15px}
+.toc h2{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 12px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+.toc li{counter-increment:t;margin:2px 0}
+.toc a{display:flex;gap:10px;color:var(--mut);padding:6px 10px;border-radius:10px}
+.toc a::before{content:counter(t);color:var(--faint);min-width:1.4em;font-variant-numeric:tabular-nums}
+.toc a:hover{background:rgba(74,222,128,.08);color:var(--ink);text-decoration:none}
+.body{max-width:760px;min-width:0}
+.body section{padding-bottom:40px;margin-bottom:40px;border-bottom:1px solid var(--line2)}
+.body section:last-child{border-bottom:0}
+.body h2{font-size:28px;line-height:1.2;letter-spacing:-.01em;margin:0 0 16px;display:flex;align-items:center;gap:12px}
+.section-num{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:10px;background:rgba(74,222,128,.14);color:var(--green);font-size:15px;font-weight:800;flex:none}
+.body h3{font-size:19px;margin:28px 0 8px;display:flex;align-items:center;gap:10px}
+.body h3 .ms{color:var(--green)}
+.body h4{margin:8px 0 4px;font-size:16px}
+.body p,.body li{color:var(--mut)} .body p{margin:0 0 14px} .body ul{padding-left:22px} .body li{margin:6px 0}
+.body strong{color:var(--ink)}
+.data-table-wrapper{overflow-x:auto;margin:18px 0;border:1px solid var(--line2);border-radius:16px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px}
+th{text-align:left;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);background:var(--card);padding:12px 14px}
+td{padding:14px;border-top:1px solid var(--line2);color:var(--mut);vertical-align:top}
+.tag{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.tag-cloud{background:rgba(56,189,248,.14);color:#7DD3FC} .tag-device{background:rgba(74,222,128,.14);color:var(--green)}
+.tag .ms{font-size:15px}
+.callout{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:18px 0}
+.callout-icon{color:var(--green);font-size:20px} .callout-title{font-weight:700;color:var(--ink);margin-bottom:4px}
+.callout p{margin:0}
+.rights-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin:18px 0}
+.right-card{background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:16px}
+.right-icon{color:var(--green);margin-bottom:6px} .right-card p{font-size:15px;margin:0}
+.contact-card{background:linear-gradient(135deg,var(--ground),var(--hi));border:1px solid var(--line);border-radius:20px;padding:26px}
+.contact-card h3{margin-top:0}
+.contact-card a[href^=mailto]{background:var(--green)!important;color:#0A2E1A!important}
+@media (max-width:900px){.doc{grid-template-columns:minmax(0,1fr);gap:28px}.toc{position:static}.toc ol{display:grid;grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.toc ol{grid-template-columns:1fr}}
 
-  <!-- Material Symbols Rounded — same icon family used in-app via the MS component -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=block" />
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    /* ───────── Brand tokens — mirror src/constants/theme.js LIGHT mode ───────── */
-    :root {
-      --primary:        #16A34A;   /* primary green, the "Check" wordmark color */
-      --primary-dark:   #0A2E1A;   /* deep dark green, the "Life" wordmark color */
-      --primary-bright: #4ADE80;   /* dark-mode bright green — used for accents */
-      --amber:          #F59E0B;   /* Amber Anchor — sparingly, for highlights */
-      --bg:             #F4F7F5;   /* LIGHT.bg */
-      --surface:        #FFFFFF;
-      --surface-soft:   #EBF0ED;  /* LIGHT.surfaceSecondary */
-      --text:           #0A2E1A;   /* same as primary-dark for high-contrast body */
-      --text-secondary: #4B5563;  /* LIGHT.textSecondary */
-      --text-muted:     #69707E;  /* LIGHT.textMuted */
-      --border:         #D1D9D4;  /* LIGHT.border */
-      --border-soft:    #B8C2BC;  /* LIGHT.borderStrong */
-      --shadow:         0 1px 2px rgba(10, 46, 26, 0.04), 0 6px 24px rgba(10, 46, 26, 0.06);
-      --radius:         16px;
-      --radius-lg:      20px;
-      --radius-pill:    999px;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --primary:        #4ADE80;
-        --primary-dark:   #FFFFFF;
-        --primary-bright: #4ADE80;
-        --bg:             #060F09;
-        --surface:        #0A2E1A;  /* DARK.surface */
-        --surface-soft:   #0D3B20;  /* DARK.surfaceSecondary */
-        --text:           rgba(255,255,255,0.85);  /* DARK.textPrimary */
-        --text-secondary: rgba(255,255,255,0.55);  /* DARK.textSecondary */
-        --text-muted:     rgba(255,255,255,0.55);  /* DARK.textMuted */
-        --border:         rgba(74, 222, 128, 0.14);
-        --border-soft:    rgba(74, 222, 128, 0.08);
-        --shadow:         0 1px 2px rgba(0,0,0,0.5), 0 6px 24px rgba(0,0,0,0.6);
-      }
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--text);
-      background: var(--bg);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* Material Symbols defaults — match app size/weight */
-    .ms {
-      font-family: 'Material Symbols Rounded';
-      font-weight: 400;
-      font-size: 22px;
-      line-height: 1;
-      vertical-align: middle;
-      user-select: none;
-    }
-    .ms-sm { font-size: 16px; }
-    .ms-lg { font-size: 28px; }
-
-    /* ─────────────── Header ─────────────── */
-    .site-header {
-      background:
-        radial-gradient(ellipse at top, rgba(74,222,128,0.18), transparent 70%),
-        linear-gradient(180deg, #16A34A 0%, #0A2E1A 100%);
-      color: #fff;
-      padding: 64px 24px 56px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .site-header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 80% -10%, rgba(245, 158, 11, 0.12), transparent 50%);
-      pointer-events: none;
-    }
-
-    .header-inner { position: relative; z-index: 1; }
-
-    /* The logo lockup — Amber Anchor icon + LifeCheck wordmark.
-       The icon SVG is embedded inline (see <svg.app-icon> below); it's
-       the master 1024-canvas spec rendered at whatever size the
-       container sets via width/height. Drop shadow comes from the
-       parent .logo-icon-wrap so the SVG itself stays crisp. */
-    .logo-lockup {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-    .logo-icon-wrap {
-      width: 56px; height: 56px;
-      flex-shrink: 0;
-      /* Use box-shadow on a sibling glow layer instead of filter:
-         drop-shadow on the wrapper. drop-shadow rasterizes the
-         element to sample for the blur, which on some browsers
-         causes the icon itself to lose sharpness. The glow now
-         sits behind the image as a separate ::before pseudo-
-         element so the actual <img> is never re-rasterized. */
-      position: relative;
-      isolation: isolate;
-    }
-    .logo-icon-wrap::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 14px;
-      background: transparent;
-      box-shadow:
-        0 6px 20px rgba(245, 158, 11, 0.28),
-        0 4px 14px rgba(22, 163, 74, 0.32);
-      z-index: -1;
-    }
-    /* The footer mark doesn't need the glow at 32px — looks heavier
-       than the wordmark next to it. Override here. */
-    footer .footer-mark .logo-icon-wrap::before { display: none; }
-    /* Using a rasterized 2048×2048 PNG (downloaded from icon@4x.png)
-       displayed at 56px gives bulletproof crispness on retina + sub-pixel
-       displays. NO image-rendering hint — the default ("auto") uses
-       browser-native bilinear/bicubic downscaling which is correct
-       for smooth gradient content. `crisp-edges` was here briefly but
-       forces nearest-neighbor scaling (designed for pixel art) which
-       makes the squircle edges and gradient look chunky.
-       The PNG is rendered once via resvg-js (Mozilla's libresvg) at
-       full master resolution and never re-rasterized client-side. */
-    .logo-icon-wrap .app-icon {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-
-    /* The wordmark — matches src/components/Wordmark.js. Two-tone, Plus Jakarta 700,
-       letter-spacing -3% of font size (28px × -0.03 = -0.84px). On the dark hero
-       header we invert: "Life" white, "Check" bright-green. */
-    .wordmark {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700;
-      font-size: 28px;
-      letter-spacing: -0.84px;
-      line-height: 1;
-    }
-    .wordmark-life  { color: #FFFFFF; }
-    .wordmark-check { color: #4ADE80; }
-
-    .site-header h1 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 800;
-      font-size: clamp(32px, 5vw, 44px);
-      letter-spacing: -1.2px;
-      margin-bottom: 12px;
-    }
-    .site-header .lede {
-      font-size: 16px;
-      color: #FFFFFF;
-      opacity: 0.95;
-      max-width: 520px;
-      margin: 0 auto;
-      line-height: 1.6;
-      font-weight: 500;
-      text-shadow: 0 1px 2px rgba(10, 46, 26, 0.3);
-    }
-    .effective-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 22px;
-      background: rgba(255,255,255,0.12);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.22);
-      border-radius: var(--radius-pill);
-      padding: 6px 14px;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.2px;
-    }
-    .effective-badge .ms { font-size: 14px; opacity: 0.9; }
-
-    /* ─────────────── Layout ─────────────── */
-    .container {
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ─────────────── Table of Contents ─────────────── */
-    .toc-wrapper {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 28px 32px;
-      margin: 48px 0;
-      box-shadow: var(--shadow);
-    }
-    .toc-wrapper h2 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-    .toc-list {
-      list-style: none;
-      counter-reset: toc;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 4px 24px;
-    }
-    .toc-list li { counter-increment: toc; }
-    .toc-list a {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      text-decoration: none;
-      color: var(--primary);
-      font-size: 14.5px;
-      font-weight: 600;
-      padding: 6px 0;
-      transition: color 0.15s, transform 0.15s;
-    }
-    .toc-list a:hover { color: var(--primary-dark); transform: translateX(2px); }
-    .toc-list a::before {
-      content: counter(toc);
-      width: 22px;
-      height: 22px;
-      flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--surface-soft);
-      color: var(--primary);
-      font-size: 11px;
-      font-weight: 700;
-      border-radius: 6px;
-    }
-
-    /* ─────────────── Sections ─────────────── */
-    main { padding: 0 0 96px; }
-
-    section {
-      padding: 48px 0;
-      border-bottom: 1px solid var(--border-soft);
-    }
-    section:last-of-type { border-bottom: none; }
-
-    section h2 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: var(--text);
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .section-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px; height: 32px;
-      background: linear-gradient(135deg, #16A34A 0%, #0A7A30 100%);
-      color: #fff;
-      font-size: 13px;
-      font-weight: 800;
-      border-radius: 10px;
-      flex-shrink: 0;
-      box-shadow: 0 2px 8px rgba(22, 163, 74, 0.3);
-    }
-
-    section h3 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--text);
-      margin: 28px 0 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    section h3 .ms { color: var(--primary); font-size: 18px; }
-
-    p { margin-bottom: 14px; color: var(--text-secondary); }
-    p:last-child { margin-bottom: 0; }
-
-    ul, ol {
-      padding-left: 22px;
-      margin-bottom: 14px;
-      color: var(--text-secondary);
-    }
-    li { margin-bottom: 8px; }
-
-    strong { font-weight: 700; color: var(--text); }
-    em     { font-style: italic; color: var(--text-secondary); }
-
-    a { color: var(--primary); text-decoration: none; font-weight: 600; }
-    a:hover { text-decoration: underline; }
-
-    /* ─────────────── Callouts ─────────────── */
-    .callout {
-      border-radius: var(--radius);
-      padding: 20px 24px;
-      margin: 22px 0;
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      border-width: 1px;
-      border-style: solid;
-    }
-    .callout-icon {
-      width: 36px; height: 36px;
-      flex-shrink: 0;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .callout-icon .ms { font-size: 22px; }
-    .callout-title {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700;
-      font-size: 15px;
-      margin-bottom: 4px;
-    }
-    .callout p {
-      margin-bottom: 0;
-      font-size: 14.5px;
-      line-height: 1.65;
-    }
-
-    .callout-info {
-      background: var(--surface-soft);
-      border-color: rgba(22, 163, 74, 0.18);
-    }
-    .callout-info .callout-icon { background: rgba(22, 163, 74, 0.12); }
-    .callout-info .callout-icon .ms { color: var(--primary); }
-    .callout-info .callout-title { color: var(--primary-dark); }
-
-    .callout-success {
-      background: rgba(74, 222, 128, 0.10);
-      border-color: rgba(22, 163, 74, 0.22);
-    }
-    .callout-success .callout-icon { background: rgba(22, 163, 74, 0.14); }
-    .callout-success .callout-icon .ms { color: var(--primary); }
-    .callout-success .callout-title { color: var(--primary-dark); }
-
-    .callout-amber {
-      background: rgba(245, 158, 11, 0.08);
-      border-color: rgba(245, 158, 11, 0.24);
-    }
-    .callout-amber .callout-icon { background: rgba(245, 158, 11, 0.14); }
-    .callout-amber .callout-icon .ms { color: #B45309; }
-    .callout-amber .callout-title { color: #92400E; }
-
-    .callout-shield {
-      background: linear-gradient(135deg, rgba(22,163,74,0.08), rgba(74,222,128,0.05));
-      border-color: rgba(22, 163, 74, 0.28);
-    }
-    .callout-shield .callout-icon {
-      background: linear-gradient(135deg, #16A34A, #0A7A30);
-    }
-    .callout-shield .callout-icon .ms { color: #fff; }
-    .callout-shield .callout-title { color: var(--primary-dark); }
-
-    @media (prefers-color-scheme: dark) {
-      .callout-amber .callout-title { color: #FCD34D; }
-      .callout-amber .callout-icon .ms { color: #F59E0B; }
-    }
-
-    /* ─────────────── Data table ─────────────── */
-    .data-table-wrapper {
-      overflow-x: auto;
-      margin: 24px 0;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: var(--surface);
-      box-shadow: var(--shadow);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-      min-width: 640px;
-    }
-    thead th {
-      background: var(--surface-soft);
-      padding: 14px 18px;
-      text-align: left;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--text-muted);
-      border-bottom: 1px solid var(--border);
-    }
-    tbody td {
-      padding: 14px 18px;
-      border-bottom: 1px solid var(--border-soft);
-      vertical-align: top;
-      color: var(--text-secondary);
-      font-size: 14px;
-      line-height: 1.55;
-    }
-    tbody tr:last-child td { border-bottom: none; }
-    tbody tr:hover td { background: var(--surface-soft); }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      padding: 3px 9px;
-      border-radius: var(--radius-pill);
-    }
-    .tag .ms { font-size: 13px; }
-    .tag.tag-cloud {
-      background: rgba(22, 163, 74, 0.12);
-      color: var(--primary);
-    }
-    .tag.tag-device {
-      background: rgba(74, 222, 128, 0.16);
-      color: #047857;
-    }
-    .tag.tag-conditional {
-      background: rgba(245, 158, 11, 0.14);
-      color: #B45309;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .tag.tag-device { color: #4ADE80; }
-      .tag.tag-conditional { color: #FCD34D; }
-    }
-
-    /* ─────────────── Rights grid ─────────────── */
-    .rights-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 14px;
-      margin: 24px 0;
-    }
-    .right-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-      transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
-    }
-    .right-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(22, 163, 74, 0.22);
-      box-shadow: var(--shadow);
-    }
-    .right-card .right-icon {
-      width: 36px; height: 36px;
-      border-radius: 10px;
-      background: var(--surface-soft);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 12px;
-    }
-    .right-card .right-icon .ms { color: var(--primary); font-size: 20px; }
-    .right-card h4 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 6px;
-      color: var(--text);
-    }
-    .right-card p {
-      font-size: 13.5px;
-      color: var(--text-muted);
-      margin-bottom: 0;
-      line-height: 1.55;
-    }
-
-    /* ─────────────── Contact card ─────────────── */
-    .contact-card {
-      background: linear-gradient(135deg, #16A34A 0%, #0A2E1A 100%);
-      color: #fff;
-      border-radius: 20px;
-      padding: 36px 32px;
-      text-align: center;
-      margin-top: 24px;
-      box-shadow: 0 12px 40px rgba(22, 163, 74, 0.25);
-      position: relative;
-      overflow: hidden;
-    }
-    .contact-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 100% 0%, rgba(245, 158, 11, 0.18), transparent 50%);
-      pointer-events: none;
-    }
-    .contact-card-inner {
-      position: relative;
-      z-index: 1;
-      max-width: 460px;
-      margin: 0 auto;
-    }
-    /* The contact card uses a static green gradient in BOTH themes,
-       so all text inside it must stay white regardless of the
-       prefers-color-scheme inversion of the global tokens. */
-    .contact-card h3 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 22px;
-      font-weight: 800;
-      margin-bottom: 8px;
-      letter-spacing: -0.4px;
-      color: #FFFFFF;
-    }
-    .contact-card p {
-      font-size: 15px;
-      color: rgba(255,255,255,0.82);
-      max-width: 460px;
-      margin: 0 auto 24px;
-    }
-    /* Contact card lives on a green gradient (in BOTH light and dark
-       modes — same .contact-card background). The button is always
-       white-on-green-card, so text + icon must always use the static
-       deep-green, NOT the theme token. The earlier --primary-dark
-       inversion in dark mode flipped them to white → invisible. */
-    .contact-email {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #fff;
-      color: #0A2E1A;
-      padding: 14px 28px;
-      border-radius: var(--radius-pill);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700;
-      font-size: 15px;
-      text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.15s;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
-    }
-    .contact-email:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,0.24); text-decoration: none; color: #0A2E1A; }
-    .contact-email .ms { color: #16A34A; font-size: 18px; }
-    .contact-meta {
-      margin-top: 18px;
-      font-size: 12.5px;
-      color: rgba(255,255,255,0.55);
-      letter-spacing: 0.2px;
-    }
-    .contact-meta strong { color: rgba(255,255,255,0.78); font-weight: 600; }
-
-    /* ─────────────── Footer ─────────────── */
-    footer {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      padding: 32px 24px;
-      text-align: center;
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-    footer .footer-mark {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-    footer .footer-mark .logo-icon-wrap { width: 32px; height: 32px; filter: none; }
-    footer .footer-mark .wordmark { font-size: 16px; letter-spacing: -0.48px; }
-    footer .footer-mark .wordmark-life { color: var(--primary-dark); }
-    footer .footer-mark .wordmark-check { color: var(--primary); }
-    footer a { color: var(--primary); }
-
-    /* ─────────────── Responsive ─────────────── */
-    @media (max-width: 600px) {
-      .toc-wrapper { padding: 24px; }
-      .toc-list { grid-template-columns: 1fr; }
-      section h2 { font-size: 20px; }
-      section h2 .section-num { width: 28px; height: 28px; font-size: 12px; }
-      .rights-grid { grid-template-columns: 1fr 1fr; }
-      .contact-card { padding: 32px 24px; }
-      .contact-card h3 { font-size: 19px; }
-    }
-    @media (max-width: 400px) {
-      .rights-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+@media (max-width:480px){nav.top .links{gap:16px;font-size:14px} nav.top .links a.wide{display:none} nav.top .brand{font-size:20px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-
-<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
-<header class="site-header">
-  <div class="header-inner">
-    <div class="logo-lockup">
-      <div class="logo-icon-wrap" aria-hidden="true">
-        <!-- Amber Anchor app icon. Rendered from the master SVG via
-             resvg-js (Mozilla libresvg) at 2048px and downscaled by the
-             browser to 56px — eliminates SVG-gradient aliasing seen
-             on some browsers / displays. -->
-        <img class="app-icon"
-             src="/assets/icon@4x.png"
-             srcset="icon.png 1x, icon@4x.png 2x"
-             width="56" height="56"
-             alt="LifeCheck app icon" />
-      </div>
-      <span class="wordmark" aria-label="LifeCheck">
-        <span class="wordmark-life">Life</span><span class="wordmark-check">Check</span>
-      </span>
-    </div>
-    <h1>Privacy Policy</h1>
-    <p class="lede">We're committed to protecting your personal information and being transparent about how we use it.</p>
-    <div class="effective-badge">
-      <span class="ms">schedule</span>
-      Effective Date: August 6, 2026
-    </div>
+<header class="page-head">
+  <div class="wrap">
+    <nav class="top">
+      <a class="brand" href="/"><img src="/assets/icon-256.png" alt="" width="34" height="34" style="border-radius:9px"><span class="wm">Life<b>Check</b></span></a>
+      <div class="links"><a class="wide" href="/#how">How it works</a><a href="/#pricing">Pricing</a><a href="/support/">Support</a></div>
+    </nav>
+    <div class="intro"><div class="eyebrow">Legal</div><h1>Privacy Policy</h1><p class="lede">What LifeCheck collects, why, who it's shared with, and the choices you have. In plain language where we can.</p><div class="chip"><span class="ms">schedule</span>Effective August 6, 2026</div></div>
   </div>
 </header>
-
-<!-- ═══════════════════════════ MAIN ═══════════════════════════ -->
-<main>
-<div class="container">
-
-  <!-- Table of Contents -->
-  <nav class="toc-wrapper" aria-label="Table of Contents">
-    <h2>Contents</h2>
-    <ol class="toc-list">
-      <li><a href="#introduction">Introduction</a></li>
-      <li><a href="#information-we-collect">Information We Collect</a></li>
-      <li><a href="#how-we-use">How We Use Your Information</a></li>
-      <li><a href="#healthkit">HealthKit Data</a></li>
-      <li><a href="#data-sharing">Data Sharing</a></li>
-      <li><a href="#data-retention">Data Retention &amp; Deletion</a></li>
-      <li><a href="#your-rights">Your Rights (GDPR / CCPA)</a></li>
-      <li><a href="#childrens-privacy">Children's Privacy</a></li>
-      <li><a href="#policy-changes">Changes to This Policy</a></li>
-      <li><a href="#contact">Contact Us</a></li>
-    </ol>
-  </nav>
-
-  <!-- ── 1. Introduction ── -->
-  <section id="introduction">
+<main class="wrap doc"><nav class="toc" aria-label="Contents"><h2>Contents</h2><ol><li><a href="#introduction">Introduction</a></li><li><a href="#information-we-collect">Information We Collect</a></li><li><a href="#how-we-use">How We Use Your Information</a></li><li><a href="#healthkit">HealthKit Data</a></li><li><a href="#data-sharing">Data Sharing</a></li><li><a href="#data-retention">Data Retention &amp; Deletion</a></li><li><a href="#your-rights">Your Rights (GDPR / CCPA)</a></li><li><a href="#childrens-privacy">Children's Privacy</a></li><li><a href="#policy-changes">Changes to This Policy</a></li><li><a href="#contact">Contact Us</a></li></ol></nav><article class="body"><section id="introduction">
     <h2><span class="section-num">1</span> Introduction</h2>
     <p>
-      Welcome to <strong>LifeCheck</strong>, a health and productivity app for iPhone and iPad available on the Apple App Store. LifeCheck is built and operated by an independent developer.
+      Welcome to <strong>LifeCheck</strong>, a health and productivity app for iPhone, with an Apple Watch app, available on the Apple App Store. LifeCheck is built and operated by an independent developer.
     </p>
     <p>
       This Privacy Policy explains what personal information we collect when you use LifeCheck, how we use it, with whom we share it, and the rights you have regarding your data. By downloading or using LifeCheck, you agree to the practices described in this policy.
@@ -681,7 +109,6 @@
     </div>
   </section>
 
-  <!-- ── 2. Information We Collect ── -->
   <section id="information-we-collect">
     <h2><span class="section-num">2</span> Information We Collect</h2>
     <p>We collect several categories of information, each for specific purposes described below.</p>
@@ -779,7 +206,6 @@
     </ul>
   </section>
 
-  <!-- ── 3. How We Use Your Information ── -->
   <section id="how-we-use">
     <h2><span class="section-num">3</span> How We Use Your Information</h2>
     <p>We use the information we collect solely to provide, maintain, and improve LifeCheck. Specifically:</p>
@@ -819,7 +245,6 @@
     </div>
   </section>
 
-  <!-- ── 4. HealthKit Data ── -->
   <section id="healthkit">
     <h2><span class="section-num">4</span> HealthKit Data</h2>
 
@@ -843,7 +268,6 @@
     </ul>
   </section>
 
-  <!-- ── 5. Data Sharing ── -->
   <section id="data-sharing">
     <h2><span class="section-num">5</span> Data Sharing</h2>
     <p>
@@ -924,7 +348,6 @@
     </div>
   </section>
 
-  <!-- ── 6. Data Retention & Deletion ── -->
   <section id="data-retention">
     <h2><span class="section-num">6</span> Data Retention &amp; Deletion</h2>
 
@@ -954,7 +377,6 @@
     </p>
   </section>
 
-  <!-- ── 7. Your Rights ── -->
   <section id="your-rights">
     <h2><span class="section-num">7</span> Your Rights (GDPR / CCPA)</h2>
     <p>
@@ -1027,7 +449,6 @@
     </p>
   </section>
 
-  <!-- ── 8. Children's Privacy ── -->
   <section id="childrens-privacy">
     <h2><span class="section-num">8</span> Children's Privacy</h2>
     <p>
@@ -1038,7 +459,6 @@
     </p>
   </section>
 
-  <!-- ── 9. Changes to This Policy ── -->
   <section id="policy-changes">
     <h2><span class="section-num">9</span> Changes to This Policy</h2>
     <p>
@@ -1056,7 +476,6 @@
     </p>
   </section>
 
-  <!-- ── 10. Contact ── -->
   <section id="contact">
     <h2><span class="section-num">10</span> Contact Us</h2>
     <p>
@@ -1076,29 +495,10 @@
     </div>
   </section>
 
-</div><!-- /container -->
-</main>
-
-<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
-<footer>
-  <div class="footer-mark">
-    <div class="logo-icon-wrap" aria-hidden="true">
-      <img class="app-icon"
-           src="/assets/icon-256.png"
-           srcset="icon.png 1x, icon@4x.png 2x"
-           width="32" height="32"
-           alt="" />
-    </div>
-    <span class="wordmark" aria-label="LifeCheck">
-      <span class="wordmark-life">Life</span><span class="wordmark-check">Check</span>
-    </span>
-  </div>
-  <p>
-    &copy; 2026 LifeCheck. All rights reserved.
-    &nbsp;·&nbsp;
-    Effective May 1, 2026
-  </p>
-</footer>
-
+</article></main>
+<footer><div class="wrap">
+  <span>© 2026 LifeCheck</span>
+  <span><a href="/privacy/">Privacy</a> · <a href="/support/">Support</a> · <a href="mailto:thelifecheckapp@gmail.com">thelifecheckapp@gmail.com</a></span>
+</div></footer>
 </body>
 </html>
