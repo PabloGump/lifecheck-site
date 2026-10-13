@@ -62,7 +62,7 @@ h2{font-weight:800;font-size:clamp(32px,3.8vw,50px);line-height:1.1;letter-spaci
 .card .pic{height:370px;overflow:hidden;margin:-4px -4px 18px;display:flex;justify-content:center;
   -webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent)}
 .card .pic img{width:280px;height:auto;align-self:flex-start}
-.card .pic.glance{align-items:center} .card .pic.glance img{width:100%;max-width:340px;align-self:center}
+.card .pic.glance{align-items:center;height:auto;min-height:370px;-webkit-mask-image:none;mask-image:none} .card .pic.glance img{width:100%;max-width:320px;align-self:center}
 .card h3{margin:0 0 6px;font-size:20px;line-height:1.3}
 .card p{margin:0;color:var(--mut);font-size:16px;line-height:1.5}
 .plans{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -87,7 +87,7 @@ footer a{color:var(--mut)}
   .hero .wrap{padding-block:8px 48px;gap:28px} .hero-shot{max-width:300px}
   section{padding-block:56px}
 }
-@media (max-width:560px){.grid{grid-template-columns:1fr}.card .pic{height:280px}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}.card .pic{height:280px}.card .pic.glance{height:auto;min-height:0}}
 @media (max-width:480px){nav .links{gap:16px;font-size:14px} nav .links a.wide{display:none} nav .brand{font-size:20px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
