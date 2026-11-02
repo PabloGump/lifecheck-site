@@ -89,7 +89,7 @@ td{padding:14px;border-top:1px solid var(--line2);color:var(--mut);vertical-alig
       <a class="brand" href="/"><img src="/assets/icon-256.png" alt="" width="34" height="34" style="border-radius:9px"><span class="wm">Life<b>Check</b></span></a>
       <div class="links"><a class="wide" href="/#how">How it works</a><a href="/#pricing">Pricing</a><a href="/support/">Support</a></div>
     </nav>
-    <div class="intro"><div class="eyebrow">Legal</div><h1>Privacy Policy</h1><p class="lede">What LifeCheck collects, why, who it's shared with, and the choices you have. In plain language where we can.</p><div class="chip"><span class="ms">schedule</span>Effective October 19, 2026</div></div>
+    <div class="intro"><div class="eyebrow">Legal</div><h1>Privacy Policy</h1><p class="lede">What LifeCheck collects, why, who it's shared with, and the choices you have. In plain language where we can.</p><div class="chip"><span class="ms">schedule</span>Effective November 2, 2026</div></div>
   </div>
 </header>
 <main class="wrap doc"><nav class="toc" aria-label="Contents"><h2>Contents</h2><ol><li><a href="#introduction">Introduction</a></li><li><a href="#information-we-collect">Information We Collect</a></li><li><a href="#how-we-use">How We Use Your Information</a></li><li><a href="#healthkit">HealthKit Data</a></li><li><a href="#data-sharing">Data Sharing</a></li><li><a href="#data-retention">Data Retention &amp; Deletion</a></li><li><a href="#your-rights">Your Rights (GDPR / CCPA)</a></li><li><a href="#childrens-privacy">Children's Privacy</a></li><li><a href="#policy-changes">Changes to This Policy</a></li><li><a href="#contact">Contact Us</a></li></ol></nav><article class="body"><section id="introduction">
@@ -150,7 +150,7 @@ td{padding:14px;border-top:1px solid var(--line2);color:var(--mut);vertical-alig
           </tr>
           <tr>
             <td><strong>Social Data</strong></td>
-            <td>Friend connections and friend codes; challenges you join; your profile (display name, Life Score, streak and summary stats), which other LifeCheck users can see when it is set to public; activity shared with friends, such as the names of tasks you complete; and reports or blocks you make</td>
+            <td>Friend connections and friend codes; challenges you join; your profile (display name, Life Score, streak and summary stats), which other LifeCheck users can see when it is set to public; what you share with friends: the badges you earn and challenges you win (you can turn this off), and the names of tasks you complete only if you turn on task sharing in Settings; and reports or blocks you make</td>
             <td><span class="tag tag-cloud"><span class="ms">cloud</span>Cloud</span></td>
             <td>Social features and shared challenges</td>
           </tr>
@@ -266,7 +266,7 @@ td{padding:14px;border-top:1px solid var(--line2);color:var(--mut);vertical-alig
     <ul>
       <li><strong>What we read.</strong> LifeCheck requests permission to read health data types including step count, workout sessions, sleep analysis, heart rate, active energy burned, and body weight.</li>
       <li><strong>What we write.</strong> LifeCheck requests permission to write a single data type: workout sessions. When you mark a workout task complete, LifeCheck saves that workout to Apple Health so your activity stays in one place. It writes nothing else, and it never deletes or modifies data written by other apps.</li>
-      <li><strong>Stays on your device.</strong> Health data read from HealthKit is processed entirely on-device and is never transmitted to Firebase, Sentry, RevenueCat, Expo, or any other service.</li>
+      <li><strong>Stays on your device.</strong> Health data read from HealthKit is processed entirely on-device and is never transmitted to Firebase, Sentry, RevenueCat, Expo, or any other service. The one thing that leaves the device is a yes/no: if you join a challenge with an Apple Health goal (for example 10,000 steps a day), the app records that you checked in that day. Your step count, sleep, workouts and other health values are never sent.</li>
       <li><strong>Never used for advertising.</strong> HealthKit data will not be used for advertising, marketing, or advertising networks of any kind.</li>
       <li><strong>Never sold.</strong> HealthKit data is never sold or disclosed for any commercial purpose.</li>
       <li><strong>Permission is optional.</strong> You may deny or revoke HealthKit access at any time via iOS Settings → Privacy &amp; Security → Health → LifeCheck. Core app features (tasks, habits, goals) remain fully functional without health access.</li>
@@ -362,7 +362,7 @@ td{padding:14px;border-top:1px solid var(--line2);color:var(--mut);vertical-alig
       We retain your account data and user-generated content for as long as your account is active. Push notification tokens are refreshed and may be updated by iOS periodically. Usage and crash data (if collected) is retained according to Firebase's default retention periods, typically 14 months.
     </p>
     <p>
-      Most of what LifeCheck stores (your tasks, habits, streaks, completion history, preferences, your name and optional age range, and anything you type yourself such as Life Audit answers, life-event entries and task notes) is written to your device first. If you choose to add your birthday for a birthday message, only its month and day are kept, on your device alone: it is never uploaded or backed up, and it is deleted when you sign out, delete your account, or delete the app. If you are signed in and cloud backup is enabled, a copy of that data is also uploaded to your private area of our database so it can be restored when you reinstall the app or sign in on another device. Nobody else can read it.</p>
+      Most of what LifeCheck stores (your tasks, habits, streaks, completion history, preferences, your name and optional age range, and anything you type yourself such as Life Audit answers, life-event entries and task notes) is written to your device first. If you choose to add your birthday for a birthday message, only its month and day are kept, on your device alone: it is never uploaded or backed up, and it is deleted when you sign out, delete your account, or delete the app. If you are signed in and cloud backup is enabled, a copy of that data is also uploaded to your private area of our database so it can be restored when you reinstall the app or sign in on another device. Nobody else can read it. This includes what you keep in a 30-day program, such as a recovery program's reasons, urges, slips and money tracker; none of it is shared with friends or used for anything but restoring your data.</p>
     <p>
       That backup is deleted along with everything else when you delete your account. Data that stays on the device only, such as notification scheduling identifiers and one-off interface flags, is removed when you delete the app or clear its data in iOS Settings.</p>
     <p>
